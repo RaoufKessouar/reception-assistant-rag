@@ -1,0 +1,50 @@
+{"question":"Comment modifier les dates d'une réservation existante ?","expected_sources":["modifier-une-reservation-74538b17cb"],"category":"software","question_type":"direct","answerable":true}
+{"question":"Le client reste une nuit de plus : où changer son séjour dans logiciel de gestion hôtelière ?","expected_sources":["modifier-une-reservation-74538b17cb"],"category":"software","question_type":"case_pratique","answerable":true}
+{"question":"Quelle procédure suivre pour créer un nouveau dossier de réservation ?","expected_sources":["creer-un-dossier-de-reservation-c7c4d470fa"],"category":"software","question_type":"procedurale","answerable":true}
+{"question":"Comment attribuer une chambre à une réservation qui n'en a pas encore ?","expected_sources":["attribuer-et-de-attribuer-des-chambres-af5af0e53e"],"category":"software","question_type":"procedurale","answerable":true}
+{"question":"Je dois déplacer un client déjà installé vers une autre chambre dans le logiciel de gestion hôtelière.","expected_sources":["deplacer-une-reservation-en-cours-de-sejour-a81a94e89b","software-faq-128"],"category":"software","question_type":"case_pratique","answerable":true}
+{"question":"Comment enregistrer un départ anticipé dans logiciel de gestion hôtelière ?","expected_sources":["faire-un-depart-anticipe-5a4b042d7c"],"category":"software","question_type":"direct","answerable":true}
+{"question":"Où saisir le règlement reçu dans le dossier du client ?","expected_sources":["enregistrer-un-reglement-dans-un-dossier-f987bc5778","software-faq-87"],"category":"software","question_type":"paraphrase","answerable":true}
+{"question":"Quelles étapes permettent de créer une facture ?","expected_sources":["creer-une-facture-911bf67b96"],"category":"software","question_type":"procedurale","answerable":true}
+{"question":"Comment faire un avoir depuis le dossier ?","expected_sources":["faire-un-avoir-452f9d4f62"],"category":"software","question_type":"direct","answerable":true}
+{"question":"Que dois-je contrôler pour réaliser la clôture journalière dans le logiciel de gestion hôtelière ?","expected_sources":["faire-la-cloture-journaliere-c483c0e549","software-faq-63"],"category":"software","question_type":"procedurale","answerable":true}
+{"question":"Comment ajouter un nouvel utilisateur dans logiciel de gestion hôtelière ?","expected_sources":["software-faq-191"],"category":"software","question_type":"direct","answerable":true}
+{"question":"Je veux limiter les actions autorisées à un profil utilisateur, où le faire ?","expected_sources":["modifier-les-droits-des-profils-utilisateurs-0ef0dc783c"],"category":"software","question_type":"paraphrase","answerable":true}
+{"question":"Comment créer un nouveau plan tarifaire ?","expected_sources":["creer-des-plans-tarifaires-6025d9c649"],"category":"software","question_type":"direct","answerable":true}
+{"question":"Pourquoi aucun plan tarifaire ne m'est proposé dans une réservation ?","expected_sources":["software-faq-178"],"category":"software","question_type":"case_pratique","answerable":true}
+{"question":"Comment ajouter un extra facturable dans le logiciel de gestion hôtelière ?","expected_sources":["creer-un-extra-451d5987bf","software-faq-12"],"category":"software","question_type":"direct","answerable":true}
+{"question":"Quelle est la procédure pour créer une option ?","expected_sources":["creer-une-option-3dd5d8c697"],"category":"software","question_type":"procedurale","answerable":true}
+{"question":"Où paramétrer un code promotionnel ?","expected_sources":["parametrage-des-codes-promotion-73270bf740"],"category":"software","question_type":"paraphrase","answerable":true}
+{"question":"Comment gérer le stock disponible dans logiciel de gestion hôtelière ?","expected_sources":["gestion-du-stock-859d310ef8"],"category":"software","question_type":"direct","answerable":true}
+{"question":"Comment utiliser le planning destiné au service de ménage ?","expected_sources":["le-planning-menage-2439666b18"],"category":"software","question_type":"paraphrase","answerable":true}
+{"question":"Quelles étapes faut-il suivre pour connecter logiciel de gestion hôtelière à une plateforme de réservation en ligne ?","expected_sources":["software-faq-179"],"category":"software","question_type":"procedurale","answerable":true}
+{"question":"Comment passer un dossier en débiteur ?","expected_sources":["software-faq-181"],"category":"software","question_type":"direct","answerable":true}
+{"question":"Une réservation doit être supprimée : comment l'annuler dans le logiciel ?","expected_sources":["software-faq-88"],"category":"software","question_type":"case_pratique","answerable":true}
+{"question":"Peut-on changer la couleur complète de l'interface logiciel de gestion hôtelière pour chaque réceptionniste ?","expected_sources":[],"category":"software","question_type":"inconnue","answerable":false}
+{"question":"logiciel de gestion hôtelière permet-il une connexion biométrique par empreinte digitale ?","expected_sources":[],"category":"software","question_type":"inconnue","answerable":false}
+{"question":"Comment enregistrer les réservations du logiciel de gestion hôtelière dans une blockchain privée ?","expected_sources":[],"category":"software","question_type":"inconnue","answerable":false}
+{"question":"À quelle heure est le check-out ?","expected_sources":["hotel-checkout-001"],"category":"hotel","question_type":"direct","answerable":true}
+{"question":"Un client veut partir à 14 h : combien coûte son late check-out ?","expected_sources":["hotel-checkout-001"],"category":"hotel","question_type":"case_pratique","answerable":true}
+{"question":"Quels contrôles et paiements effectuer lors d'un check-in standard ?","expected_sources":["hotel-checkin-001"],"category":"hotel","question_type":"procedurale","answerable":true}
+{"question":"Peut-on remettre une chambre au client avant midi si elle est déjà prête ?","expected_sources":["hotel-checkin-002"],"category":"hotel","question_type":"case_pratique","answerable":true}
+{"question":"Que faire des bagages d'un client dont la chambre n'est pas encore prête ?","expected_sources":["hotel-luggage-001"],"category":"hotel","question_type":"case_pratique","answerable":true}
+{"question":"Un visiteur extérieur peut-il monter directement dans une chambre ?","expected_sources":["hotel-visitors-001"],"category":"hotel","question_type":"case_pratique","answerable":true}
+{"question":"La réception accepte-t-elle une arrivée en pleine nuit ?","expected_sources":["hotel-arrival-001"],"category":"hotel","question_type":"paraphrase","answerable":true}
+{"question":"Quand doit-on demander la garantie de 50 euros à un client ?","expected_sources":["hotel-payments-001"],"category":"hotel","question_type":"direct","answerable":true}
+{"question":"La carte du client est refusée et il ne reste qu'une nuit : que faire ?","expected_sources":["hotel-payments-002"],"category":"hotel","question_type":"case_pratique","answerable":true}
+{"question":"Comment traiter le paiement d'une réservation prépayée par VCC ?","expected_sources":["hotel-payments-005"],"category":"hotel","question_type":"procedurale","answerable":true}
+{"question":"Le client annule moins de 48 heures avant son arrivée : quelle règle appliquer ?","expected_sources":["hotel-reservations-002"],"category":"hotel","question_type":"case_pratique","answerable":true}
+{"question":"À quel moment passe-t-on une réservation en no-show ?","expected_sources":["hotel-reservations-003"],"category":"hotel","question_type":"direct","answerable":true}
+{"question":"Dans quels cas objectifs peut-on refuser un client walk-in ?","expected_sources":["hotel-reservations-001"],"category":"hotel","question_type":"procedurale","answerable":true}
+{"question":"Si le nouveau tarif est moins cher après une modification, réduit-on le prix ?","expected_sources":["hotel-reservations-004"],"category":"hotel","question_type":"case_pratique","answerable":true}
+{"question":"Le client change de chambre à cause d'un problème de l'hôtel : facture-t-on un supplément ?","expected_sources":["hotel-reservations-005"],"category":"hotel","question_type":"case_pratique","answerable":true}
+{"question":"Quels sont les horaires et les tarifs du petit-déjeuner ?","expected_sources":["hotel-services-001"],"category":"hotel","question_type":"direct","answerable":true}
+{"question":"Le code Wi-Fi ne fonctionne pas : quelles manipulations proposer ?","expected_sources":["hotel-services-002"],"category":"hotel","question_type":"procedurale","answerable":true}
+{"question":"Comment réserver un taxi pour Paris ou pour un aéroport ?","expected_sources":["hotel-services-003"],"category":"hotel","question_type":"direct","answerable":true}
+{"question":"Un client a perdu sa carte de chambre : comment lui en créer une autre en sécurité ?","expected_sources":["hotel-incidents-001"],"category":"hotel","question_type":"procedurale","answerable":true}
+{"question":"La chambre est sale et aucune autre chambre n'est libre : que devons-nous faire ?","expected_sources":["hotel-complaints-001"],"category":"hotel","question_type":"case_pratique","answerable":true}
+{"question":"Après un second avertissement pour bruit, les occupants deviennent agressifs : quelle escalade ?","expected_sources":["hotel-complaints-002"],"category":"hotel","question_type":"case_pratique","answerable":true}
+{"question":"En cas de danger immédiat, faut-il appeler d'abord le responsable ou les secours ?","expected_sources":["hotel-escalation-001"],"category":"hotel","question_type":"ambigue","answerable":true}
+{"question":"L'hôtel accepte-t-il les paiements en Bitcoin ?","expected_sources":[],"category":"hotel","question_type":"inconnue","answerable":false}
+{"question":"Quels sont les horaires d'ouverture de la piscine de l'hôtel ?","expected_sources":[],"category":"hotel","question_type":"inconnue","answerable":false}
+{"question":"Peut-on commander un room service chaud à trois heures du matin ?","expected_sources":[],"category":"hotel","question_type":"inconnue","answerable":false}

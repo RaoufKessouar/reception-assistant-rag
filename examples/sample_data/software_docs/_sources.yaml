@@ -1,0 +1,14 @@
+# Manifeste d'exemple pour la documentation du logiciel de gestion hôtelière.
+# Format lu par src/ingestion/hotel_software/generic_connector/docs.py.
+# Les valeurs sont fictives.
+
+sources:
+  "guide-reservations.pdf":
+    source_id: software-docs-guide-reservations
+    title: Guide des réservations
+    authority: official
+    status: verified
+    url: https://docs.example.org/guide-reservations.pdf
+    version: "1.0"
+    last_reviewed: 2026-08-01
+    skip_pages: 1

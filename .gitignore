@@ -1,0 +1,119 @@
+# ═══════════════════════════════════════════════════════════
+#  Reception Assistant — .gitignore
+#  Sources propriétaires, données personnelles, artefacts lourds.
+# ═══════════════════════════════════════════════════════════
+
+# ─── Données propriétaires / confidentielles : NE JAMAIS COMMITTER ───
+# Le code est public, mais les données brutes restent privées.
+data/*
+!data/.gitkeep
+!data/README.md
+knowledge/hotel_software/
+knowledge/hotel/
+
+# ─── Secrets ───
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.json
+client_secret*.json
+server_inventory.txt
+
+# ─── Environnements virtuels / Conda / Python ───
+.venv/
+venv/
+env/
+ENV/
+.conda/
+*.egg-info/
+.eggs/
+
+# ─── Caches Python ───
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.python_3_*/cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+.coverage.*
+*.cover
+
+# ─── Modèles téléchargés et checkpoints ───
+models/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+*.gguf
+.huggingface/
+huggingface/
+.cache/
+
+# ─── Stockage vectoriel (Qdrant local) ───
+data/qdrant_storage/
+storage/
+
+# ─── Logs et exécutions ───
+logs/
+*.log
+log.txt
+tmp/
+.tmp/
+
+# ─── Supports multimédia volumineux (vidéos / audio) ───
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+
+# ─── Archives volumineuses ───
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+portable_backups/
+
+# ─── Interface / runtime Streamlit ───
+.streamlit/secrets.toml
+*.pyc.streamlit
+
+# ─── IDEs ───
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.suo
+*.user
+
+# ─── Système (Windows / macOS) ───
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# ─── Fichiers de relecture / évaluation temporaires ───
+.interface_review_*/
+review_packet*.html
+*.status

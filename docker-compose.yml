@@ -1,0 +1,10 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: reception-rag-qdrant
+    ports:
+      - "6333:6333"   # API REST + dashboard http://localhost:6333/dashboard
+      - "6334:6334"   # gRPC
+    volumes:
+      - ./data/qdrant_storage:/qdrant/storage
+    restart: unless-stopped

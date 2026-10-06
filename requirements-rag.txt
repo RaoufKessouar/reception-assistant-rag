@@ -1,0 +1,7 @@
+# Environnement RAG : normalisation, chunking, embeddings et Qdrant local.
+-r requirements-core.txt
+
+FlagEmbedding==1.4.2
+qdrant-client==1.19.0
+transformers==5.16.1
+streamlit>=1.36,<2

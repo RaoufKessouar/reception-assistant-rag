@@ -1,0 +1,33 @@
+# Exemple fictif de fiche de procédure hôtel (Knowledge Card).
+# Structure attendue par src/ingestion/hotel/knowledge_cards.py.
+# Données 100 % fictives — aucun établissement réel, aucune donnée client.
+
+id: hotel-example-latecheckout-001
+title: Départ tardif — exemple
+
+category: checkout
+subcategory: late_checkout
+
+situation: >
+  Un client demande à libérer sa chambre après l'heure de départ standard.
+  Fiche d'exemple, à adapter aux règles réelles de votre hôtel.
+
+procedure:
+  - Vérifier que la chambre n'est pas déjà réservée pour la même journée.
+  - Consulter le tarif de départ tardif applicable ce jour-là.
+  - Informer le client du montant et recueillir son accord.
+  - Enregistrer le départ tardif dans le logiciel de gestion hôtelière.
+
+exceptions:
+  - Un départ tardif peut être offert selon la disponibilité et la saison.
+  - Aucun départ tardif au-delà de l'heure fixée par la direction.
+
+escalation:
+  - Contacter le responsable si la chambre est déjà réservée le même jour.
+
+review_questions:
+  - Quelle heure de départ tardif est appliquée en haute saison ?
+
+status: draft
+language: fr
+last_reviewed: null

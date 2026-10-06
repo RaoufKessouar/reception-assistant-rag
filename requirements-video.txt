@@ -1,0 +1,20 @@
+# Environnement des etapes 1 a 4 sur server-b.
+# PyTorch 2.8/CUDA 12.6 est installe separement par le script de setup.
+pydantic>=2.7,<3
+pyyaml>=6.0,<7
+typer>=0.12,<1
+rich>=13.7,<15
+openai>=1.40,<3
+transformers>=4.49,<5
+accelerate>=0.34,<2
+qwen-vl-utils>=0.0.8,<1
+whisperx==3.8.5
+scenedetect>=0.6.4,<0.7
+opencv-python-headless>=4.10
+pillow>=10.3
+filelock>=3.15
+beautifulsoup4>=4.12,<5
+lxml>=5.2,<7
+markdownify>=0.13,<2
+pypdf>=5,<7
+pytest>=8.2,<10

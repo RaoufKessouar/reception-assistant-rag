@@ -1,0 +1,101 @@
+# Taxonomies fonctionnelles de reference.
+# Taxonomie de référence commune à l’ingestion et au retrieval.
+# Les identifiants restent independants de l'interface d'un logiciel de gestion hôtelière particulier.
+
+version: 1
+
+software:
+  general: []
+
+  reservations:
+    - create_reservation
+    - search_reservation
+    - modify_reservation
+    - cancel_reservation
+    - change_dates
+    - room_assignment
+    - notes
+
+  check_in_check_out:
+    - check_in
+    - check_out
+    - no_show
+    - late_arrival
+
+  payments:
+    - payment
+    - deposit
+    - refund
+    - vcc
+    - ota_payment
+
+  billing:
+    - invoice
+    - company_invoice
+    - split_invoice
+    - modify_invoice
+
+  planning: []
+  reports: []
+  rooms: []
+  guests: []
+  users: []
+  settings: []
+
+hotel:
+  guest_journey:
+    - check_in
+    - check_out
+    - early_check_in
+    - late_check_out
+    - luggage
+    - visitors
+
+  payments:
+    - deposit
+    - refund
+    - cash
+    - card_rejected
+    - ota
+    - invoice
+    - payment_dispute
+
+  reservations:
+    - cancellation
+    - modification
+    - no_show
+    - walk_in
+    - overbooking
+    - room_change
+
+  services:
+    - breakfast
+    - wifi
+    - taxis
+    - luggage
+    - amenities
+
+  incidents:
+    - key_card
+    - wifi
+    - air_conditioning
+    - heating
+    - television
+    - room_issue
+
+  complaints:
+    - noise
+    - cleanliness
+    - equipment
+    - room_condition
+
+  night_reception:
+    - late_arrivals
+    - night_tasks
+    - daily_closure
+    - next_day_preparation
+
+  escalation:
+    - who_to_contact
+    - when_to_call_manager
+    - emergency_procedures

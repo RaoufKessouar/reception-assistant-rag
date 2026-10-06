@@ -1,0 +1,24 @@
+# ─── Coeur, ingestion texte et tests ───
+-r requirements-core.txt
+
+# ─── Vector DB + embeddings ───
+FlagEmbedding>=1.2          # BGE-M3
+
+# ─── LLM / VLM ───
+transformers>=4.49,<5       # >=4.49 requis pour Qwen2.5-VL
+accelerate>=0.34
+qwen-vl-utils>=0.0.8
+
+# ─── Ingestion documentation ───
+
+# ─── Pipeline vidéo ───
+whisperx==3.8.5
+scenedetect>=0.6.4,<0.7
+opencv-python-headless>=4.10
+pillow>=10.3
+filelock>=3.15
+
+# ─── UI + tests ───
+streamlit>=1.36
+
+# torch : installer separement selon le serveur, voir README

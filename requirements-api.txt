@@ -1,0 +1,4 @@
+# Mode local portable : donnees et Qdrant sur le PC, modeles via API.
+-r requirements-core.txt
+
+streamlit>=1.36,<2

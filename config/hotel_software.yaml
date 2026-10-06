@@ -1,0 +1,24 @@
+# ═══════════════════════════════════════════════════════
+#  logiciel de gestion hôtelière actif
+#  Le logiciel de gestion hôtelière est une source de connaissances
+#  remplaçable, pas une dépendance du moteur de recherche.
+# ═══════════════════════════════════════════════════════
+
+active_software: generic_connector
+
+software:
+  generic_connector:
+    display_name: logiciel de gestion hôtelière
+    driver: src.ingestion.hotel_software.generic_connector:GenericHotelSoftwareSource
+    language: fr
+    authority: official
+    # Portail de support du logiciel de gestion hôtelière (à personnaliser dans votre configuration privée).
+    portal_url:
+    docs_footer_domain:
+    paths:
+      docs: data/raw/software_docs
+      qa: data/raw/software_qa
+      videos: data/raw/software_videos
+
+  # Pour ajouter une autre plateforme, déclarer ici son connecteur et son
+  # chemin d'import sans modifier le moteur RAG.

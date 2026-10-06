@@ -1,0 +1,185 @@
+# ═══════════════════════════════════════════════════════
+#  Configuration generale reception-assistant-rag
+# ═══════════════════════════════════════════════════════
+
+# ─── Serveur actif : "server-a" ou "server-b" ───
+# Change cette seule ligne pour basculer de machine.
+server: server-b
+
+# Identifiant interne neutre de l'établissement dont les procédures ont été
+# recueillies. Il peut être renommé sans modifier le moteur RAG.
+hotel:
+  id: hotel_reference
+
+servers:
+
+  local-api:
+    # Profil sans GPU local. Le LLM et, si souhaite, les embeddings sont
+    # fournis par des API; les donnees et Qdrant restent sur ce PC.
+    dtype: float16
+    attn_implementation: sdpa
+    vlm_model: api-configured
+    vlm_backend: remote_json
+    llm_model: deepseek-v4-flash
+    llm_backend: api
+    embedding_device: cpu
+    asr_device: cpu
+    vlm_device: cpu
+    llm_device: cpu
+    isolate_video_stages: true
+
+  server-a:
+    # L40S 48 Go - architecture Ada (sm_89).
+    dtype: bfloat16
+    attn_implementation: flash_attention_2
+    # FP8 tient sur 46 Go et garde une marge pour les images et le KV cache.
+    vlm_model: Qwen/Qwen3-VL-30B-A3B-Instruct-FP8
+    vlm_backend: vllm
+    llm_model: Qwen/Qwen3-32B-AWQ
+    judge_model: Qwen/Qwen3-32B-AWQ
+    llm_backend: vllm
+    embedding_device: cuda:0
+    asr_device: cuda:0
+    vlm_device: cuda:0
+    llm_device: cuda:0
+    isolate_video_stages: true
+
+  server-b:
+    # 2x Quadro RTX 8000 - architecture Turing (sm_75).
+    # Pas de bfloat16, pas de FlashAttention-2, pas de Qwen3-VL sous vLLM.
+    dtype: float16
+    attn_implementation: sdpa
+    vlm_model: Qwen/Qwen2.5-VL-7B-Instruct
+    vlm_backend: transformers
+    # Le modele precedent reste note pour les comparaisons A/B.
+    baseline_llm_model: Qwen/Qwen2.5-14B-Instruct
+    llm_model: Qwen/Qwen3-14B
+    llm_backend: transformers
+    # Chemin du cache modèle : configuré via HF_HOME / RECEPTION_RAG_HF_HOME.
+    model_cache:
+    embedding_device: cuda:1
+    asr_device: cuda:1
+    vlm_device: cuda:1
+    llm_device: cuda:1
+    isolate_video_stages: true
+    # Le pipeline Python utilise les indices physiques et ne doit pas etre lance
+    # avec CUDA_VISIBLE_DEVICES. ASR, VLM et LLM sont lances successivement.
+
+# ─── Embeddings ───
+embeddings:
+  backend: local
+  model: BAAI/bge-m3
+  base_url:
+  api_key:
+  api_dimensions:
+  timeout_seconds: 120
+  dense_dim: 1024
+  max_length: 8192
+  batch_size: 8
+  use_sparse: true          # indispensable : VCC, no-show, OTA...
+
+# ─── Chunking structure-aware ───
+# Les limites ne sont utilisées qu'après les frontières métier/structurelles.
+# Une paire Q/R et une étape vidéo ne sont jamais coupées.
+chunking:
+  documentation_max_chars: 2400
+  hotel_procedure_max_chars: 3200
+  qa_warning_chars: 6000
+  video_warning_chars: 1600
+
+# ─── Vector database ───
+qdrant:
+  mode: local
+  path: data/qdrant_storage
+  url: http://localhost:6333
+  collection: reception-rag
+  top_k: 5
+  # On recherche plus de candidats puis on garde des sources différentes.
+  # Les chunks voisins d'une procédure peuvent être développés à la demande.
+  candidate_multiplier: 4
+  max_chunks_per_source: 1
+  # Seuil dense initial : conserve 44/44 réponses connues et rejette 4/6
+  # questions inconnues sur le benchmark. Le LLM complète l'abstention.
+  min_score: 0.59
+
+# ─── LLM (serveur vLLM compatible OpenAI) ───
+llm:
+  base_url: http://localhost:8000/v1
+  api_key: EMPTY
+  temperature: 0.1
+  max_tokens: 800
+  timeout_seconds: 240
+  verify_generation: true
+  # Le RAG attend une reponse courte et citee. Le raisonnement interne de Qwen3
+  # est donc desactive ici; le juge independant conserve son propre prompt.
+  enable_thinking: false
+
+# ─── ASR ───
+asr:
+  model: large-v3
+  language: fr
+  compute_type: float16
+  batch_size: 8
+  initial_prompt: >-
+    Tutoriel logiciel de gestion hôtelière pour la réception hôtelière : planning, onglet
+    Réservations, réservation, dossier de réservation, arrhes, no-show,
+    chambre, prestations, TVA, réservation corpo, corbeille rouge et
+    annulation sans frais.
+  hotwords: >-
+    logiciel de gestion hôtelière planning onglet Réservations réservation réservations
+    dossier arrhes no-show chambre prestations TVA corpo corbeille rouge
+    annulation
+
+# ─── Pipeline video ───
+video:
+  frame_offset_before: 0.25
+  frame_offset_after: 1.5
+  scene_threshold: 3.0
+  min_scene_len: 0.4
+  min_frame_gap: 0.20
+  capture_all_segments: false
+  semantic_frame_delay: 0.15
+  semantic_frame_min_matches: 3
+  semantic_frame_max_per_segment: 6
+  semantic_frame_cues:
+    - statut
+    - date
+    - occupation
+    - personne
+    - prestation
+    - attribution
+    - tarif
+    - option
+    - remarque
+    - facture
+    - extra
+    - quantite
+  action_cues:
+    - cliqu
+    - selection
+    - chois
+    - sais
+    - ouvr
+    - ferm
+    - modifi
+    - appuy
+    - renseign
+    - valid
+    - enregistr
+    - deplac
+    - attribu
+    - coch
+    - rendez-vous
+    - affich
+    - bouton
+    - transfer
+    - ajout
+    - remarqu
+    - corbeille
+    - annul
+    - rembours
+  vlm_min_pixels: 200704       # 256 * 28 * 28
+  vlm_max_pixels: 2207744      # 2816 * 28 * 28, conserve le 1080p
+  # Budget cumule du second passage multi-images. Il preserve le 1080p pour
+  # deux captures et reduit progressivement la resolution au-dela.
+  calibration_total_pixels: 4415488
